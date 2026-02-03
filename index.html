@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Be My Valentine 💖</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffd6e8, #fff1f7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .container {
+    background: #fff;
+    padding: 30px 24px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    width: 320px;
+    position: relative;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    color: #ff4d6d;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 24px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  #yes {
+    background: #ff4d6d;
+    color: white;
+  }
+
+  #no {
+    background: #eee;
+    color: #333;
+    position: relative;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+  }
+
+  /* Valentine card */
+  .card {
+    display: none;
+    animation: pop 0.5s ease forwards;
+  }
+
+  .roses {
+    font-size: 3rem;
+    margin: 12px 0;
+  }
+
+  @keyframes pop {
+    from { transform: scale(0.6); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container" id="main">
+  <h1>Hey you 💕</h1>
+  <p>Will you be my Valentine?</p>
+
+  <div class="buttons">
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 🙃</button>
+  </div>
+</div>
+
+<div class="container card" id="card">
+  <h1>YAYYYYY 💘</h1>
+  <div class="roses">🌹🌹🌹</div>
+  <p>You just made my Valentine’s Day perfect.</p>
+</div>
+
+<script>
+  const yesBtn = document.getElementById("yes");
+  const noBtn = document.getElementById("no");
+  const main = document.getElementById("main");
+  const card = document.getElementById("card");
+
+  yesBtn.onclick = () => {
+    main.style.display = "none";
+    card.style.display = "block";
+  };
+
+  noBtn.onmouseover = () => {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  };
+</script>
+
+</body>
+</html>
